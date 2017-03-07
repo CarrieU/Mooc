@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="./jquery-1.4.4.min.js"></script>
+	<script type="text/javascript">
+	console.log("begin");
+	$(function(){
+		//var $ = cheerio.load(html);
+		var url = 'http://www.bttiantang.org';
+		var filmsData = $('.ml').find('.item');
+
+		var films = [];
+		filmsData.each(function(itme){
+			var film = $(this);
+			var title = $(film.find('.title'));
+
+			var publishDate = title.find('p.tt').find('font:first').html();
+			var filmName = title.find('p.tt').find('a').find('font').html();
+			filmName = filmName.replace('<i>/','_').replace('</i>','');
+			var filmOtherName = title.find('p:eq(1)').find('a').html();
+			var filmScore = title.find('p.rt').find('strong').html();
+			var filmSrc = url + title.find('p.tt').find('a').attr('href');
+			var id = title.find('p.tt').find('a').attr('href');
+			id = id.split('/')[2].split('.')[0];
+			alert(id);
+			//alert(publishDate+"_"+filmOtherName+"/"+filmName +" (豆瓣："+filmScore+")");
+		});
+	});
+	</script>
+
+</head>
+<body>
+	<div class="ml">
+  		<div class="mtlbt cl">
+			<span class="ts">
+				<a href="/" title="最新bt电影下载">最新电影</a>
+			</span>
+			<font color="red">老域名已正常，请认准网站地址：Www.bttiantang.org</font>
+		</div> 
+
+		<div class="item cl">
+			<div class="title">
+				<p class="tt cl">
+					<span><font color="red">2017-03-06</font></span>
+					<a href="/subject/37126.html" target="_blank">
+						<b><font color="#FF6600">我们<i>/Sobre Nós</i>.2016</font></b>
+					</a>
+				</p>
+				<p>又名：<a href="/subject/37126.html" target="_blank">About Us</a></p>
+				<p class="des">2016(巴西,)<em>/</em>
+					Mauro Carvalho,导演,Thiago Cazado,Mauro Carvalho,Rodrigo Bittes,Leandro Menezes,Carmem Moretzsohn,Andreessa Lee,等主演,2016上映,bt天堂提供我们/Sobre Nós1080P高清种子下载,我们高清版迅雷下载...
+				</p>
+				<p class="rt">豆瓣评分：<strong>7.2</strong></p>
+			</div>
+			<div class="litpic">
+				<a href="/subject/37126.html" target="_blank">
+					<img src="http://pic.hdtiantang.com:88/d/file/pic/20170305/26940049.jpg" alt="我们" onerror="this.onerror=null;this.src='/style/no_litpic.gif'">
+				</a>
+			</div>
+		</div>
+
+		<div class="item cl">
+			<div class="title">
+				<p class="tt cl">
+					<span><font color="red">2017-03-06</font></span>
+					<a href="/subject/37126.html" target="_blank">
+						<b><font color="#FF6600">我们<i>/Sobre Nós</i>.2016</font></b>
+					</a>
+				</p>
+				<p>又名：<a href="/subject/37126.html" target="_blank">About Us</a></p>
+				<p class="des">2016(巴西,)<em>/</em>
+					Mauro Carvalho,导演,Thiago Cazado,Mauro Carvalho,Rodrigo Bittes,Leandro Menezes,Carmem Moretzsohn,Andreessa Lee,等主演,2016上映,bt天堂提供我们/Sobre Nós1080P高清种子下载,我们高清版迅雷下载...
+				</p>
+				<p class="rt">豆瓣评分：<strong>7.2</strong></p>
+			</div>
+			<div class="litpic">
+				<a href="/subject/37126.html" target="_blank">
+					<img src="http://pic.hdtiantang.com:88/d/file/pic/20170305/26940049.jpg" alt="我们" onerror="this.onerror=null;this.src='/style/no_litpic.gif'">
+				</a>
+			</div>
+		</div>
+
+		<ul class="pagelist">
+ 			<b>1</b>
+ 			<a href="index-1.html">2</a>
+ 			<a href="index-2.html">3</a>
+ 			<a href="index-3.html">4</a>
+ 			<a href="index-4.html">5</a>
+ 			<a href="index-5.html">6</a>
+ 			<a href="index-6.html">7</a>
+ 			<a href="index-7.html">8</a>
+ 			<a href="index-8.html">9</a>
+ 			<a href="index-9.html">10</a>
+ 			<a href="index-1.html">下一页</a>
+ 			<a href="index-1232.html">尾页</a>
+ 		</ul>
+ 	</div>
+</body>
+</html>
